@@ -1,0 +1,143 @@
+﻿<Window x:Class="Itel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Itel"
+        Loaded="Window_Loaded" Closing="Window_Closing"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="Itel" Height="750" Width="270">
+    <Grid x:Name="mainGrid" Margin="6" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="73*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="6" Grid.RowSpan="2" BorderBrush="Black" Grid.ColumnSpan="2" Margin="4,0"
+                CornerRadius="2" BorderThickness="1" Background="#33FF0000">
+            <Border.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Enable"
+                              Click="Enable_Click"/>
+                </ContextMenu>
+            </Border.ContextMenu>
+        </Border>
+
+        <Button Name="BTNdetail" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Content="B" 
+                IsEnabled="False" Click="Button_Click"/>
+        <Button x:Name="buttonOldCards" Grid.ColumnSpan="2" Content="OC" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="30" 
+                Click="buttonOldCards_Click" IsEnabled="False"/>
+        <Button Name="BTNprofit" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="P" 
+                 Click="BTNprofit_Click"/>
+
+
+        <TextBlock  Name="balanceTB" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch"  Text="Balance = 5254.623$"
+                    FontSize="23"  Grid.ColumnSpan="2" Foreground="#FF2B577C" TextWrapping="Wrap" TextAlignment="Center" Background="AliceBlue" Visibility="Hidden"/>
+
+
+        <CheckBox Name="check" Margin="2,2,0,0" Checked="check_Checked" Unchecked="check_Checked" HorizontalAlignment="Left" 
+                  VerticalAlignment="Top" IsChecked="False" Grid.Row="1" IsEnabled="False"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,16,0"
+                   FontSize="20" Text="touch 25$"/>
+        <TextBlock Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,16,0"
+                   FontSize="20" Text="touch 50$"/>
+        <TextBlock Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,16,0"
+                   FontSize="20" Text="touch 75$"/>
+        <TextBlock Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,16,0"
+                   FontSize="20" Text="touch 12.5$"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,16,0"
+                   FontSize="20" Text="alfa 25$"/>
+        <TextBlock Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,16,0"
+                   FontSize="20" Text="alfa 9.09$"/>
+        <TextBlock Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,16,0"
+                   FontSize="20" Text="start 10$"/>
+        <TextBlock Grid.Row="9" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,16,0"
+                   FontSize="20" Text="SOS 4$"/>
+        <TextBlock Grid.Row="10" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,16,0"
+            FontSize="20" Text="touch year"/>
+
+        <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#66ADFF2F"
+                 Width="50" FontSize="28" Tag="80022" GotKeyboardFocus="textbox_GotKeyboardFocus" PreviewKeyDown="textboxProgram_PreviewKeyDown"
+                 Name="touch1MonthProgTB" Text="0" HorizontalContentAlignment="Center" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#AA77B913"
+                 Width="50" FontSize="28" Tag="80045" GotKeyboardFocus="textbox_GotKeyboardFocus" PreviewKeyDown="textboxProgram_PreviewKeyDown"
+                 Name="touch2MonthProgTB" Text="0" HorizontalContentAlignment="Center" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FF5C9900"
+                 Width="50" FontSize="28" Tag="80068" GotKeyboardFocus="textbox_GotKeyboardFocus" PreviewKeyDown="textboxProgram_PreviewKeyDown"
+                 Name="touch3MonthProgTB" Text="0" HorizontalContentAlignment="Center" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#66FFFF00"
+                 Width="50" FontSize="28" Tag="80011" GotKeyboardFocus="textbox_GotKeyboardFocus" PreviewKeyDown="textboxProgram_PreviewKeyDown"
+                 Name="touchSmallProgTB" Text="0" HorizontalContentAlignment="Center" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                 Width="50" FontSize="28" Tag="81025"  GotKeyboardFocus="textbox_GotKeyboardFocus" PreviewKeyDown="textboxProgram_PreviewKeyDown"
+                 Name="alfa1MonthProgTB" Text="0" HorizontalContentAlignment="Center" Background="#66FF0000" IsEnabled="False"/>
+        <TextBox Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                 Width="50" FontSize="28" Tag="81010"  GotKeyboardFocus="textbox_GotKeyboardFocus" PreviewKeyDown="textboxProgram_PreviewKeyDown"
+                 Name="alfaSmallProgTB" Text="0" HorizontalContentAlignment="Center" Background="#CCE06EE0" IsEnabled="False"/>
+        <TextBox Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                 Width="50" FontSize="28" Tag="80010" GotKeyboardFocus="textbox_GotKeyboardFocus" PreviewKeyDown="textboxProgram_PreviewKeyDown"
+                 Name="startProgTB" Text="0" HorizontalContentAlignment="Center" Background="#6687CEEB" IsEnabled="False"/>
+        <TextBox Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                 Width="50" FontSize="28" Tag="80040"  GotKeyboardFocus="textbox_GotKeyboardFocus" PreviewKeyDown="textboxProgram_PreviewKeyDown"
+                 Name="sosProgTB" Text="0" HorizontalContentAlignment="Center" IsEnabled="False"/>
+        <TextBox Grid.Row="10" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Width="50" FontSize="28" Tag="80231"  GotKeyboardFocus="textbox_GotKeyboardFocus" PreviewKeyDown="textboxProgram_PreviewKeyDown"
+            x:Name="touchYearProgTB" Text="0" HorizontalContentAlignment="Center" IsEnabled="False" Background="Black" Foreground="White"/>
+
+        <TextBlock  Name="statusTB" Grid.Row="11" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                    FontSize="20"  Grid.ColumnSpan="2" Foreground="Blue" TextWrapping="Wrap" TextAlignment="Center"/>
+
+        <StackPanel Margin="2" Grid.ColumnSpan="2" Grid.Row="12" Orientation="Horizontal" Keyboard.PreviewKeyDown="StackPanel_PreviewKeyDown"
+                    VerticalAlignment="Top">
+            <TextBlock Text="Cards" VerticalAlignment="Center" Margin="3,0,6,0" FontSize="18"/>
+            <TextBox Name="touchBigCardTB" Text="0" VerticalAlignment="Center" Margin="4" FontSize="18" Background="GreenYellow"/>
+            <TextBox Name="touchMediumCardTB" Text="0" VerticalAlignment="Center" Margin="4" FontSize="18" Background="#FFFF9300"/>
+            <TextBox Name="touchSmallCardTB" Text="0" VerticalAlignment="Center" Margin="4" FontSize="18" Background="Yellow"/>
+            <TextBox Name="alfaBigCardTB" Text="0" VerticalAlignment="Center" Margin="4" FontSize="18" Background="Red"/>
+            <TextBox Name="alfaMediumCardTB" Text="0" VerticalAlignment="Center" Margin="4" FontSize="18" Background="#FFFF7C85"/>
+            <TextBox Name="alfaSmallCardTB" Text="0" VerticalAlignment="Center" Margin="4" FontSize="18" Background="#FFE06EE0"/>
+        </StackPanel>
+        <StackPanel Margin="2" Grid.ColumnSpan="2" Grid.Row="12" Orientation="Horizontal" Keyboard.PreviewKeyDown="StackPanel_PreviewKeyDown"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <TextBox Name="touch2MonthCardTB" Text="0" VerticalAlignment="Center" Margin="4" FontSize="18" Background="#FF78C700"/>
+            <TextBox Name="touch3MonthCardTB" Text="0" VerticalAlignment="Center" Margin="4" FontSize="18" Background="#FF4E8000"/>
+            <TextBox Name="touchYearCardTB" Text="0" VerticalAlignment="Center" Margin="4" FontSize="18" Background="Black" Foreground="White"/>
+            <TextBox Name="startCardTB" Text="0" VerticalAlignment="Center" Margin="4" FontSize="18" Background="SkyBlue"/>
+            <TextBox Name="sosCardTB" Text="0" VerticalAlignment="Center" Margin="4" FontSize="18" Background="Snow"/>
+        </StackPanel>
+
+
+        <Button Name="goButton" Grid.Row="13" Content="OMT" Padding="18,8" HorizontalAlignment="Center"
+                VerticalAlignment="Center" FontFamily="Verdana" FontSize="16" Click="goBTN_Click"/>
+        <Button Name="classButton" Grid.Row="13" Content="Class" Padding="18,8" HorizontalAlignment="Center" Grid.Column="1"
+                VerticalAlignment="Center" FontFamily="Verdana" FontSize="16" Click="goBTN_Click"/>
+        <Button x:Name="cardsButton" Content="Get Card" Grid.Column="1" HorizontalAlignment="Left" Margin="10.6,21,0,0" Grid.Row="13"
+                VerticalAlignment="Top" Width="60" Padding="2" Visibility="Hidden"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,10.3,15.31,9.9"
+            FontSize="20" Text="touch 19.11$"/>
+        <TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#66FF6E00"
+            Width="50" FontSize="28" Tag="80017" GotKeyboardFocus="textbox_GotKeyboardFocus" PreviewKeyDown="textboxProgram_PreviewKeyDown"
+            x:Name="touchMediumProgTB" Text="0" HorizontalContentAlignment="Center" TextAlignment="Center" IsEnabled="False"/>
+
+
+
+    </Grid>
+</Window>
